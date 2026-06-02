@@ -1,69 +1,11 @@
-// Valores iniciais das barras (em porcentagem)
-let producao = 50;
-let ambiente = 50;
+# Agrinho 2026: Agro Forte e Futuro Sustentável 🌽🌱
 
-function acao(tipo) {
-    if (tipo === 'produzir') {
-        // Aumenta produção, mas gera leve impacto ambiental
-        producao += 15;
-        ambiente -= 10;
-    } else if (tipo === 'preservar') {
-        // Foca no ambiente, reduzindo temporariamente o ritmo de produção
-        ambiente += 15;
-        producao -= 10;
-    } else if (tipo === 'sustentavel') {
-        // Tecnologia e práticas sustentáveis equilibram ambos positivamente
-        producao += 8;
-        ambiente += 8;
-    }
+Este projeto é um simulador interativo desenvolvido para o concurso do Agrinho. O objetivo é conscientizar sobre a importância do equilíbrio entre a **Produção Agrícola (focada na cultura do milho)** e a **Preservação Ambiental**.
 
-    // Restringe os valores entre 0 e 100
-    producao = Math.max(0, Math.min(100, producao));
-    ambiente = Math.max(0, Math.min(100, ambiente));
+## 🚀 Tecnologias Utilizadas
+* HTML5
+* CSS3 (Design responsivo com temática agrícola)
+* JavaScript (Lógica de equilíbrio e estados da fazenda)
 
-    // Atualiza a interface visual
-    atualizarTela();
-}
-
-function atualizarTela() {
-    // Atualiza a largura das barras de progresso
-    document.getElementById('barra-producao').style.width = producao + '%';
-    document.getElementById('barra-ambiente').style.width = ambiente + '%';
-
-    // Atualiza os textos numéricos
-    document.getElementById('txt-producao').innerText = producao + '%';
-    document.getElementById('txt-ambiente').innerText = ambiente + '%';
-
-    // Elemento da mensagem de feedback (CORRIGIDO AQUI)
-    const msgElement = document.getElementById('mensagem');
-    
-    // Lógica de verificação do equilíbrio
-    let diferenca = Math.abs(producao - ambiente);
-
-    if (producao <= 20) {
-        msgElement.innerText = "⚠️ Alerta: A produção está muito baixa! A população precisa de alimentos e o Agro precisa ser forte.";
-        msgElement.style.backgroundColor = "#ffebee";
-        msgElement.style.color = "#c62828";
-        msgElement.style.borderColor = "#ffcdd2";
-    } else if (ambiente <= 20) {
-        msgElement.innerText = "⚠️ Alerta: Impacto ambiental crítico! Sem recursos naturais, o futuro do agro está ameaçado.";
-        msgElement.style.backgroundColor = "#ffebee";
-        msgElement.style.color = "#c62828";
-        msgElement.style.borderColor = "#ffcdd2";
-    } else if (diferenca <= 15) {
-        msgElement.innerText = "🌿 Parabéns! Você alcançou o equilíbrio perfeito entre produzir e preservar!";
-        msgElement.style.backgroundColor = "#e8f5e9";
-        msgElement.style.color = "#2e7d32";
-        msgElement.style.borderColor = "#c8e6c9";
-    } else if (producao > ambiente) {
-        msgElement.innerText = "🚜 Produção em alta, mas lembre-se de investir mais em práticas sustentáveis.";
-        msgElement.style.backgroundColor = "#fff3e0";
-        msgElement.style.color = "#ef6c00";
-        msgElement.style.borderColor = "#ffe0b2";
-    } else {
-        msgElement.innerText = "🌱 Excelente cuidado ambiental! Agora use tecnologia para impulsionar a colheita.";
-        msgElement.style.backgroundColor = "#e0f2f1";
-        msgElement.style.color = "#00695c";
-        msgElement.style.borderColor = "#b2dfdb";
-    }
-}
+## 🌾 Como Funciona?
+O usuário assume o papel de um produtor de milho e deve tomar decisões estratégicas através de botões. Cada escolha impacta diretamente os níveis de produção e sustentabilidade. O desafio é manter ambos em harmonia!
