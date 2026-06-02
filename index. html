@@ -1,45 +1,69 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agrinho: Agro Forte e Futuro Sustentável</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+// Valores iniciais das barras (em porcentagem)
+let producao = 50;
+let ambiente = 50;
 
-    <div class="container">
-        <h1>Agrinho 2026</h1>
-        <h2>Agro Forte & Futuro Sustentável</h2>
-        <p class="subtitulo">Gerencie sua fazenda buscando o equilíbrio perfeito entre produzir e preservar!</p>
+function acao(tipo) {
+    if (tipo === 'produzir') {
+        // Aumenta produção, mas gera leve impacto ambiental
+        producao += 15;
+        ambiente -= 10;
+    } else if (tipo === 'preservar') {
+        // Foca no ambiente, reduzindo temporariamente o ritmo de produção
+        ambiente += 15;
+        producao -= 10;
+    } else if (tipo === 'sustentavel') {
+        // Tecnologia e práticas sustentáveis equilibram ambos positivamente
+        producao += 8;
+        ambiente += 8;
+    }
 
-        <div class="painel-status">
-            <div class="status-card">
-                <h3>🚜 Produção Agrícola</h3>
-                <div class="barra-fundo">
-                    <div id="barra-producao" class="barra-progresso producao" style="width: 50%;"></div>
-                </div>
-                <span id="txt-producao">50%</span>
-            </div>
+    // Restringe os valores entre 0 e 100
+    producao = Math.max(0, Math.min(100, producao));
+    ambiente = Math.max(0, Math.min(100, ambiente));
 
-            <div class="status-card">
-                <h3>🌱 Preservação Ambiental</h3>
-                <div class="barra-fundo">
-                    <div id="barra-ambiente" class="barra-progresso ambiente" style="width: 50%;"></div>
-                </div>
-                <span id="txt-ambiente">50%</span>
-            </div>
-        </div>
+    // Atualiza a interface visual
+    atualizarTela();
+}
 
-        <div id="mensagem" class="alerta-equilibrio">A fazenda está em perfeito equilíbrio! Continue assim.</div>
+function atualizarTela() {
+    // Atualiza a largura das barras de progresso
+    document.getElementById('barra-producao').style.width = producao + '%';
+    document.getElementById('barra-ambiente').style.width = ambiente + '%';
 
-        <div class="botoes-acao">
-            <button onclick="acao('produzir')">Aumentar Produção (Uso de Tecnologia)</button>
-            <button onclick="acao('preservar')">Plantar Árvores / Proteger Nascentes</button>
-            <button onclick="acao('sustentavel')">Prática Sustentável (ILPF / Orgânicos)</button>
-        </div>
-    </div>
+    // Atualiza os textos numéricos
+    document.getElementById('txt-producao').innerText = producao + '%';
+    document.getElementById('txt-ambiente').innerText = ambiente + '%';
 
-    <script src="script.js"></script>
-</body>
-</html>
+    // Elemento da mensagem de feedback (CORRIGIDO AQUI)
+    const msgElement = document.getElementById('mensagem');
+    
+    // Lógica de verificação do equilíbrio
+    let diferenca = Math.abs(producao - ambiente);
+
+    if (producao <= 20) {
+        msgElement.innerText = "⚠️ Alerta: A produção está muito baixa! A população precisa de alimentos e o Agro precisa ser forte.";
+        msgElement.style.backgroundColor = "#ffebee";
+        msgElement.style.color = "#c62828";
+        msgElement.style.borderColor = "#ffcdd2";
+    } else if (ambiente <= 20) {
+        msgElement.innerText = "⚠️ Alerta: Impacto ambiental crítico! Sem recursos naturais, o futuro do agro está ameaçado.";
+        msgElement.style.backgroundColor = "#ffebee";
+        msgElement.style.color = "#c62828";
+        msgElement.style.borderColor = "#ffcdd2";
+    } else if (diferenca <= 15) {
+        msgElement.innerText = "🌿 Parabéns! Você alcançou o equilíbrio perfeito entre produzir e preservar!";
+        msgElement.style.backgroundColor = "#e8f5e9";
+        msgElement.style.color = "#2e7d32";
+        msgElement.style.borderColor = "#c8e6c9";
+    } else if (producao > ambiente) {
+        msgElement.innerText = "🚜 Produção em alta, mas lembre-se de investir mais em práticas sustentáveis.";
+        msgElement.style.backgroundColor = "#fff3e0";
+        msgElement.style.color = "#ef6c00";
+        msgElement.style.borderColor = "#ffe0b2";
+    } else {
+        msgElement.innerText = "🌱 Excelente cuidado ambiental! Agora use tecnologia para impulsionar a colheita.";
+        msgElement.style.backgroundColor = "#e0f2f1";
+        msgElement.style.color = "#00695c";
+        msgElement.style.borderColor = "#b2dfdb";
+    }
+}
