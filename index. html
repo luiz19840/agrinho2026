@@ -1,11 +1,95 @@
-# Agrinho 2026: Agro Forte e Futuro Sustentável 🌽🌱
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agro Forte & Sustentável</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
 
-Este projeto é um simulador interativo desenvolvido para o concurso do Agrinho. O objetivo é conscientizar sobre a importância do equilíbrio entre a **Produção Agrícola (focada na cultura do milho)** e a **Preservação Ambiental**.
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fa-solid fa-leaf"></i> <span>Agro<span>Forte</span></span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#pilares">Pilares</a></li>
+                    <li><a href="#tecnologia">Tecnologia</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-## 🚀 Tecnologias Utilizadas
-* HTML5
-* CSS3 (Design responsivo com temática agrícola)
-* JavaScript (Lógica de equilíbrio e estados da fazenda)
+    <section id="inicio" class="hero">
+        <div class="container hero-content">
+            <h1>O Futuro da Agricultura é Sustentável</h1>
+            <p>Unindo a força do campo à preservação ambiental para alimentar o mundo de forma inteligente e responsável.</p>
+            <a href="#pilares" class="btn">Conheça Nossos Pilares</a>
+        </div>
+    </section>
 
-## 🌾 Como Funciona?
-O usuário assume o papel de um produtor de milho e deve tomar decisões estratégicas através de botões. Cada escolha impacta diretamente os níveis de produção e sustentabilidade. O desafio é manter ambos em harmonia!
+    <section id="pilares" class="pilares container">
+        <div class="section-title">
+            <h2>Agro Forte e Consciente</h2>
+            <p>Como equilibramos alta produtividade com o respeito ao meio ambiente.</p>
+        </div>
+        <div class="grid-pilares">
+            <div class="card">
+                <i class="fa-solid fa-seedling card-icon"></i>
+                <h3>Manejo Biológico</h3>
+                <p>Uso de bioinsumos e controle natural de pragas, reduzindo o impacto químico no solo e nos lençóis freáticos.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-droplet card-icon"></i>
+                <h3>Gestão Hídrica</h3>
+                <p>Sistemas de irrigação gota a gota e captação de água da chuva para o uso milimetrado e sem desperdícios.</p>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-solar-panel card-icon"></i>
+                <h3>Energia Limpa</h3>
+                <p>Fazendas movidas a energia solar e biomassa, diminuindo drasticamente a pegada de carbono do setor.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="tecnologia" class="tecnologia">
+        <div class="container tecnologia-container">
+            <div class="tecnologia-text">
+                <h2>Tecnologia de Precisão no Campo</h2>
+                <p>A sustentabilidade no agro moderno não acontece sem inovação. Através de sensores de solo, monitoramento por drones e inteligência artificial, conseguimos aplicar a quantidade exata de recursos que a planta precisa, evitando excessos e protegendo a biodiversidade.</p>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> Redução de até 30% no uso de insumos.</li>
+                    <li><i class="fa-solid fa-check"></i> Mapeamento detalhado da saúde da lavoura.</li>
+                    <li><i class="fa-solid fa-check"></i> Rastreabilidade total do campo à mesa.</li>
+                </ul>
+            </div>
+            <div class="tecnologia-img">
+                <div class="placeholder-img"><i class="fa-solid fa-tractor"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contato">
+        <div class="container footer-container">
+            <div class="footer-info">
+                <h3>Agro Forte & Sustentável</h3>
+                <p>Cultivando soluções para as próximas gerações.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Contato</h4>
+                <p><i class="fa-solid fa-envelope"></i> contato@agrofortesustentavel.com.br</p>
+                <p><i class="fa-solid fa-phone"></i> (11) 99999-9999</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Agro Forte Sustentável. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
