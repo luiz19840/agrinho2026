@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agrinho: Agro Forte e Futuro Sustentável</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Agrinho 2026</h1>
+        <h2>Agro Forte & Futuro Sustentável</h2>
+        <p class="subtitulo">Gerencie sua fazenda buscando o equilíbrio perfeito entre produzir e preservar!</p>
+
+        <div class="painel-status">
+            <div class="status-card">
+                <h3>🚜 Produção Agrícola</h3>
+                <div class="barra-fundo">
+                    <div id="barra-producao" class="barra-progresso producao" style="width: 50%;"></div>
+                </div>
+                <span id="txt-producao">50%</span>
+            </div>
+
+            <div class="status-card">
+                <h3>🌱 Preservação Ambiental</h3>
+                <div class="barra-fundo">
+                    <div id="barra-ambiente" class="barra-progresso ambiente" style="width: 50%;"></div>
+                </div>
+                <span id="txt-ambiente">50%</span>
+            </div>
+        </div>
+
+        <div id="mensagem" class="alerta-equilibrio">A fazenda está em perfeito equilíbrio! Continue assim.</div>
+
+        <div class="botoes-acao">
+            <button onclick="acao('produzir')">Aumentar Produção (Uso de Tecnologia)</button>
+            <button onclick="acao('preservar')">Plantar Árvores / Proteger Nascentes</button>
+            <button onclick="acao('sustentavel')">Prática Sustentável (ILPF / Orgânicos)</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
